@@ -51,7 +51,7 @@ def event_checker():
             is_deleted=False
         ).all()
 
-        for  event in events :
+        for event in events :
             for mail in emails:
                 mail_data = dict()
                 mail_data["email_sender"] = current_app.config["MAIL_USERNAME"]
@@ -59,4 +59,10 @@ def event_checker():
                 mail_data["email_subject"] = event.email_subject
                 mail_data["email_content"] = event.email_content
 
+            #send email
             send_email(**mail_data)
+
+            #update is_sent attribute
+            event.is_sent = True
+            event.save()
+        
