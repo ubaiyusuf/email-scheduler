@@ -1,0 +1,1 @@
+* * * * * cd /path/to/project/directory && .venv/bin/flask scheduler event_checker
