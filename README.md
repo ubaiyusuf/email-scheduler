@@ -80,8 +80,6 @@ Install python virtualenv and activate the virtualenv
 
 ### Cron schedule
 This is the necessary cron schedule to check every minute which email that needed to send in that time
-
-    ```shell
+    
     * * * * * cd /path/to/project/directory && .venv/bin/flask scheduler event_checker
-    -
-    ```
+    
